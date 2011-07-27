@@ -6,7 +6,7 @@
  */
 $packageID = $this->installation->getPackageID();
 $parentPackageID = $this->installation->getPackage()->getParentPackageID();
-$filename = 'default-theme.tgz';
+$filename = 'sample-theme.tgz';
 
 // extract theme tar
 $sourceFile = $this->installation->getArchive()->extractTar($filename, 'theme_');
