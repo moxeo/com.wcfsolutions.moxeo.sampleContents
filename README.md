@@ -1,7 +1,7 @@
-WCF Solutions Infinite Site (Sample Contents)
-=============================================
+Moxeo Open Source CMS (Sample Contents)
+=======================================
 
-Repository of the WCF Solutions CMS project (Sample Contents).
+Repository of the Moxeo Open Source CMS project (Sample Contents).
 
 License
 -------
