@@ -77,7 +77,7 @@ $this->pluginObjects[\'TemplatePluginModifierFulldate\'] = new TemplatePluginMod
 	$articleSectionData = array(
 		'headline' => 'Willkommen bei Moxeo Open Source CMS!',
 		'headlineSize' => 1,
-		'code' => '<p>Gl&uuml;ckwunsch, Sie haben <em>Moxeo Open Source CMS</em> erfolgreich installiert! Sie k&ouml;nnen nun &uuml;ber die <a href="./acp/">Administrationsoberfl&auml;che</a> neue Inhalte hinzuf&uuml;gen.</p>',
+		'code' => '<p>Gl&uuml;ckwunsch, Sie haben <em>Moxeo Open Source CMS</em> erfolgreich installiert! Das war einfach, oder? Sie k&ouml;nnen nun &uuml;ber die <a href="./acp/">Administrationsoberfl&auml;che</a> neue Inhalte hinzuf&uuml;gen.</p>',
 		'thumbnail' => '',
 		'thumbnailCaption' => '',
 		'thumbnailAlternativeTitle' => '',
