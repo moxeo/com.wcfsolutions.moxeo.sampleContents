@@ -47,7 +47,7 @@ if (!isset($this->pluginObjects[\'TemplatePluginModifierFulldate\'])) {
 require_once(WCF_DIR.\'lib/system/template/plugin/TemplatePluginModifierFulldate.class.php\');
 $this->pluginObjects[\'TemplatePluginModifierFulldate\'] = new TemplatePluginModifierFulldate;
 }
-?><a href=\"http://www.moxeo.org/\">Software: <strong>Moxeo Open Source CMS</strong>, entwickelt von WCF Solutions</a> | <?php echo $this->pluginObjects[\'TemplatePluginModifierFulldate\']->execute(array(TIME_NOW), $this); ?>'
+?><a href="http://www.moxeo.org/">Software: <strong>Moxeo Open Source CMS</strong>, entwickelt von WCF Solutions</a> | <?php echo $this->pluginObjects[\'TemplatePluginModifierFulldate\']->execute(array(TIME_NOW), $this); ?>'
 	), $packageID);
 
 	// add modules to layout
