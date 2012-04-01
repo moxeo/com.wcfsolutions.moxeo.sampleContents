@@ -22,22 +22,35 @@ $theme = ThemeEditor::import($sourceFile, $packageID);
 if ($theme->themeID) {
 	// create theme layout
 	require_once(WCF_DIR.'lib/data/theme/layout/ThemeLayoutEditor.class.php');
-	$themeLayout = ThemeLayoutEditor::create($theme->themeID, 'Default', "global\nnavigation\ncontent\nform", $packageID);
+	$themeLayout = ThemeLayoutEditor::create($theme->themeID, 'Default', "global\nlayout\nnavigation\nfile\nimage\nnews\ncomment\nform", $packageID);
 	$themeLayout->setAsDefault($parentPackageID);
 
 	// create default modules
 	require_once(WCF_DIR.'lib/data/theme/module/ThemeModuleEditor.class.php');
-	$headerThemeModule = ThemeModuleEditor::create($theme->themeID, 'Page Title', '', '', 'html', array('code' => '{PAGE_TITLE}', 'dynamicCode' => '<?php echo StringUtil::encodeHTML(PAGE_TITLE); ?>'), $packageID);
+	$userPanelThemeModule = ThemeModuleEditor::create($theme->themeID, 'Page Title', 'userPanel', '', 'html', array(
+		'code' => '<div id="userNote">{if $this->user->userID}Angemeldet als {$this->user->username}.{else}Sie sind nicht angemeldet.{/if}',
+		'dynamicCode' => '<div id="userNote"><?php if ($this->v[\'this\']->user->userID) { ?>Angemeldet als <?php echo StringUtil::encodeHTML($this->v[\'this\']->user->username); ?>.<?php } else { ?>Sie sind nicht angemeldet.<?php } ?>'
+	), $packageID);
+	$headerThemeModule = ThemeModuleEditor::create($theme->themeID, 'Page Title', 'pageTitle', '', 'html', array(
+		'code' => '<a href="./">{PAGE_TITLE}</a>',
+		'dynamicCode' => '<a href="./"><?php echo StringUtil::encodeHTML(PAGE_TITLE); ?></a>'
+	), $packageID);
 	$mainNavigationThemeModule = ThemeModuleEditor::create($theme->themeID, 'Main Menu', 'mainMenu', '', 'navigation', array('levelOffset' => 0, 'levelLimit' => 1), $packageID);
 	$subNavigationThemeModule = ThemeModuleEditor::create($theme->themeID, 'Sub Menu', 'subMenu', '', 'navigation', array('levelOffset' => 1, 'levelLimit' => 5), $packageID);
 	$breadCrumbThemeModule = ThemeModuleEditor::create($theme->themeID, 'Bread Crumbs', '', '', 'breadCrumb', array(), $packageID);
 	$articleThemeModule = ThemeModuleEditor::create($theme->themeID, 'Article', '', '', 'article', array(), $packageID);
+	$footerThemeModule = ThemeModuleEditor::create($theme->themeID, 'Footer', '', '', 'html', array(
+		'code' => '<a href="http://www.moxeo.org/">Software: <strong>Moxeo Open Source CMS</strong>, entwickelt von WCF Solutions</a> | {@TIME_NOW|fulldate}',
+		'dynamicCode' => '<?php\nif (!isset($this->pluginObjects[\'TemplatePluginModifierFulldate\'])) {\nrequire_once(WCF_DIR.\'lib/system/template/plugin/TemplatePluginModifierFulldate.class.php\');\n$this->pluginObjects[\'TemplatePluginModifierFulldate\'] = new TemplatePluginModifierFulldate;\n}\n?><a href="http://www.moxeo.org/">Software: <strong>Moxeo Open Source CMS</strong>, entwickelt von WCF Solutions</a> | <?php echo $this->pluginObjects[\'TemplatePluginModifierFulldate\']->execute(array(TIME_NOW), $this); ?>'
+	), $packageID);
 
 	// add modules to layout
+	$themeLayout->addThemeModule($userPanelThemeModule->themeModuleID, 'header');
 	$themeLayout->addThemeModule($headerThemeModule->themeModuleID, 'header');
 	$themeLayout->addThemeModule($mainNavigationThemeModule->themeModuleID, 'header');
 	$themeLayout->addThemeModule($subNavigationThemeModule->themeModuleID, 'left');
 	$themeLayout->addThemeModule($breadCrumbThemeModule->themeModuleID, 'main');
 	$themeLayout->addThemeModule($articleThemeModule->themeModuleID, 'main');
+	$themeLayout->addThemeModule($footerThemeModule->themeModuleID, 'footer');
 }
 ?>
