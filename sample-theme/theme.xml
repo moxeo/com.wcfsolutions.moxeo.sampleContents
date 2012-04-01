@@ -14,6 +14,5 @@
 	</author>
 	<files>
 		<data>data.tar</data>
-		<templates>templates.tar</templates>
 	</files>
 </theme>
