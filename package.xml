@@ -2,8 +2,8 @@
 <package name="com.wcfsolutions.moxeo.sampleContents" xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/package.xsd">
 	<packageinformation>
 		<packagename>Sample Contents</packagename>
-		<version>1.0.0 Beta 1</version>
-		<date>2012-02-23</date>
+		<version>1.0.0 RC 1</version>
+		<date>2012-04-02</date>
 		<plugin>com.wcfsolutions.moxeo</plugin>
 	</packageinformation>
 
@@ -18,6 +18,12 @@
 	</requiredpackages>
 
 	<instructions type="install">
+		<!-- files -->
+		<files>files.tar</files>
+		<script>acp/install_sample-contents.php</script>
+	</instructions>
+
+	<instructions type="update" fromversion="1.0.0 Beta 1">
 		<!-- files -->
 		<files>files.tar</files>
 		<script>acp/install_sample-contents.php</script>
