@@ -42,7 +42,12 @@ if ($theme->themeID) {
 	$articleThemeModule = ThemeModuleEditor::create($theme->themeID, 'Article', '', '', 'article', array(), $packageID);
 	$footerThemeModule = ThemeModuleEditor::create($theme->themeID, 'Footer', '', '', 'html', array(
 		'code' => '<a href="http://www.moxeo.org/">Software: <strong>Moxeo Open Source CMS</strong>, entwickelt von WCF Solutions</a> | {@TIME_NOW|fulldate}',
-		'dynamicCode' => "<?php\nif (!isset($this->pluginObjects['TemplatePluginModifierFulldate'])) {\nrequire_once(WCF_DIR.'lib/system/template/plugin/TemplatePluginModifierFulldate.class.php');\n$this->pluginObjects['TemplatePluginModifierFulldate'] = new TemplatePluginModifierFulldate;\n}\n?><a href=\"http://www.moxeo.org/\">Software: <strong>Moxeo Open Source CMS</strong>, entwickelt von WCF Solutions</a> | <?php echo $this->pluginObjects['TemplatePluginModifierFulldate']->execute(array(TIME_NOW), $this); ?>"
+		'dynamicCode' => '<?php
+if (!isset($this->pluginObjects[\'TemplatePluginModifierFulldate\'])) {
+require_once(WCF_DIR.\'lib/system/template/plugin/TemplatePluginModifierFulldate.class.php\');
+$this->pluginObjects[\'TemplatePluginModifierFulldate\'] = new TemplatePluginModifierFulldate;
+}
+?><a href=\"http://www.moxeo.org/\">Software: <strong>Moxeo Open Source CMS</strong>, entwickelt von WCF Solutions</a> | <?php echo $this->pluginObjects[\'TemplatePluginModifierFulldate\']->execute(array(TIME_NOW), $this); ?>'
 	), $packageID);
 
 	// add modules to layout
@@ -63,7 +68,7 @@ if ($theme->themeID) {
 
 	// create article
 	$sql = "INSERT INTO	moxeo".WCF_N."_".$instanceNo."_article
-				(contentItemID, themeModulePosition, title, showOrder)
+				(contentItemID, themeModulePosition, title)
 		VALUES		(".$contentItemID.", 'main', 'Startseite')";
 	WCF::getDB()->sendQuery($sql);
 	$articleID = WCF::getDB()->getInsertID("moxeo".WCF_N."_".$instanceNo."_article", 'articleID');
