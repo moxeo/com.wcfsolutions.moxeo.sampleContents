@@ -6,6 +6,7 @@
  */
 $packageID = $this->installation->getPackageID();
 $parentPackageID = $this->installation->getPackage()->getParentPackageID();
+$instanceNo = $this->installation->getPackage()->getParentPackage()->getInstanceNo();
 $filename = 'sample-theme.tgz';
 
 // extract theme tar
@@ -52,5 +53,36 @@ if ($theme->themeID) {
 	$themeLayout->addThemeModule($breadCrumbThemeModule->themeModuleID, 'main');
 	$themeLayout->addThemeModule($articleThemeModule->themeModuleID, 'main');
 	$themeLayout->addThemeModule($footerThemeModule->themeModuleID, 'footer');
+
+	// create index page
+	$sql = "INSERT INTO	moxeo".WCF_N."_".$instanceNo."_content_item
+				(languageID, parentID, title, contentItemAlias)
+		VALUES		(".WCF::getLanguage()->getLanguageID().", 0, 'Startseite', 'startseite')";
+	WCF::getDB()->sendQuery($sql);
+	$contentItemID = WCF::getDB()->getInsertID("moxeo".WCF_N."_".$instanceNo."_content_item", 'contentItemID');
+
+	// create article
+	$sql = "INSERT INTO	moxeo".WCF_N."_".$instanceNo."_article
+				(contentItemID, themeModulePosition, title, showOrder)
+		VALUES		(".$contentItemID.", 'main', 'Startseite')";
+	WCF::getDB()->sendQuery($sql);
+	$articleID = WCF::getDB()->getInsertID("moxeo".WCF_N."_".$instanceNo."_article", 'articleID');
+
+	// save article section
+	$articleSectionData = array(
+		'headline' => 'Willkommen bei Moxeo Open Source CMS!',
+		'headlineSize' => 1,
+		'code' => '<p>Gl&uuml;ckwunsch, Sie haben <em>Moxeo Open Source CMS</em> erfolgreich installiert! Sie k&ouml;nnen nun &uuml;ber die <a href="./acp/">Administrationsoberfl&auml;che</a> neue Inhalte hinzuf&uuml;gen.</p>',
+		'thumbnail' => '',
+		'thumbnailCaption' => '',
+		'thumbnailAlternativeTitle' => '',
+		'thumbnailURL' => '',
+		'enableThumbnail' => 0,
+		'thumbnailEnableFullsize' => 0
+	);
+	$sql = "INSERT INTO	moxeo".WCF_N."_".$instanceNo."_article_section
+				(articleID, articleSectionType, articleSectionData)
+		VALUES		(".$articleID.", 'text', '".escapeString(serialize($articleSectionData))."')";
+	WCF::getDB()->sendQuery($sql);
 }
 ?>
