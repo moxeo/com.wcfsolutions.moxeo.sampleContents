@@ -28,8 +28,8 @@ if ($theme->themeID) {
 	// create default modules
 	require_once(WCF_DIR.'lib/data/theme/module/ThemeModuleEditor.class.php');
 	$userPanelThemeModule = ThemeModuleEditor::create($theme->themeID, 'Page Title', 'userPanel', '', 'html', array(
-		'code' => '<div id="userNote">{if $this->user->userID}Angemeldet als {$this->user->username}.{else}Sie sind nicht angemeldet.{/if}',
-		'dynamicCode' => '<div id="userNote"><?php if ($this->v[\'this\']->user->userID) { ?>Angemeldet als <?php echo StringUtil::encodeHTML($this->v[\'this\']->user->username); ?>.<?php } else { ?>Sie sind nicht angemeldet.<?php } ?>'
+		'code' => '<div id="userNote">{if $this->user->userID}Angemeldet als {$this->user->username}.{else}Sie sind nicht angemeldet.{/if}</div>',
+		'dynamicCode' => '<div id="userNote"><?php if ($this->v[\'this\']->user->userID) { ?>Angemeldet als <?php echo StringUtil::encodeHTML($this->v[\'this\']->user->username); ?>.<?php } else { ?>Sie sind nicht angemeldet.<?php } ?></div>'
 	), $packageID);
 	$headerThemeModule = ThemeModuleEditor::create($theme->themeID, 'Page Title', 'pageTitle', '', 'html', array(
 		'code' => '<a href="./">{PAGE_TITLE}</a>',
@@ -41,7 +41,7 @@ if ($theme->themeID) {
 	$articleThemeModule = ThemeModuleEditor::create($theme->themeID, 'Article', '', '', 'article', array(), $packageID);
 	$footerThemeModule = ThemeModuleEditor::create($theme->themeID, 'Footer', '', '', 'html', array(
 		'code' => '<a href="http://www.moxeo.org/">Software: <strong>Moxeo Open Source CMS</strong>, entwickelt von WCF Solutions</a> | {@TIME_NOW|fulldate}',
-		'dynamicCode' => '<?php\nif (!isset($this->pluginObjects[\'TemplatePluginModifierFulldate\'])) {\nrequire_once(WCF_DIR.\'lib/system/template/plugin/TemplatePluginModifierFulldate.class.php\');\n$this->pluginObjects[\'TemplatePluginModifierFulldate\'] = new TemplatePluginModifierFulldate;\n}\n?><a href="http://www.moxeo.org/">Software: <strong>Moxeo Open Source CMS</strong>, entwickelt von WCF Solutions</a> | <?php echo $this->pluginObjects[\'TemplatePluginModifierFulldate\']->execute(array(TIME_NOW), $this); ?>'
+		'dynamicCode' => "<?php\nif (!isset($this->pluginObjects['TemplatePluginModifierFulldate'])) {\nrequire_once(WCF_DIR.'lib/system/template/plugin/TemplatePluginModifierFulldate.class.php');\n$this->pluginObjects['TemplatePluginModifierFulldate'] = new TemplatePluginModifierFulldate;\n}\n?><a href=\"http://www.moxeo.org/\">Software: <strong>Moxeo Open Source CMS</strong>, entwickelt von WCF Solutions</a> | <?php echo $this->pluginObjects['TemplatePluginModifierFulldate']->execute(array(TIME_NOW), $this); ?>"
 	), $packageID);
 
 	// add modules to layout
