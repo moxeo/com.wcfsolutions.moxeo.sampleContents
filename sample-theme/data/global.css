@@ -8,67 +8,20 @@ Copyright 2009-2012 by wcfsolutions.com
 
 */
 
-/* ### -- -- -- -- -- Page Layout -- -- -- -- -- ### */
-
-#header, #content, #footer {
-	width: 960px;
-	border: 1px solid #999;
-	margin: 10px auto;
+body, html {
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
 }
 
-#header {
-	background-color: #777;
+a {
+	color: #154268;
+	text-decoration: none;
 }
 
-#header .htmlThemeModule {
-	font-size: 2em;
-	font-weight: bold;
-	color: #fff;
-	margin-bottom: 10px;
-}
-
-#main:after {
-	clear: both;
-	display: block;
-	height: 0;
-	content: "";
-}
-
-.inner {
-	padding: 10px;
-}
-
-#content .inner {
-	padding: 15px;
-}
-
-#left {
-	float: left;
-}
-
-#right {
-	float: right;
-}
-
-
-#layout-2 #right, #layout-3 #left {
-	width: 200px;
-}
-
-#layout-4 #left, #layout-4 #right {
-	width: 200px;
-}
-
-#layout-3 #main, #layout-4 #main {
-	margin-left: 200px;
-}
-
-#layout-2 #main, #layout-4 #main {
-	margin-right: 200px;
-}
-
-#content:after {
-	clear: both;
+a:hover {
+	color:#000;
+	text-decoration: none;
 }
 
 /* ### -- -- -- -- -- Inner Errors -- -- -- -- -- ### */

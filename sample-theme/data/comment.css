@@ -1,0 +1,21 @@
+
+/* ### -- -- -- -- -- Comment Styles -- -- -- -- -- ### */
+
+/*
+
+File: comment.css
+Copyright 2009-2012 by wcfsolutions.com
+
+*/
+
+.comments {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.comments li {
+	padding: 5px 0;
+}
+
+/* ### -- -- -- -- -- EOF -- -- -- -- -- ### */

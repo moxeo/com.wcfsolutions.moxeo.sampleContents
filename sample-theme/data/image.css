@@ -1,0 +1,61 @@
+
+/* ### -- -- -- -- -- Image Styles -- -- -- -- -- ### */
+
+/*
+
+File: image.css
+Copyright 2009-2012 by wcfsolutions.com
+
+*/
+
+/* ### -- -- -- -- -- Thumbnails / Images -- -- -- -- -- ### */
+
+.thumbnail, .image {
+	text-align: center;
+	border: 1px solid #8DA4B7;
+}
+
+.thumbnail span, .image span {
+	display: block;
+	margin-top: 5px;
+	text-align: center;
+	font-size: 0.85em;
+}
+
+.thumbnail img, .image img {
+	max-width: 100%;
+}
+
+/* ### -- -- -- -- -- Thumbnails -- -- -- -- -- ### */
+
+.thumbnail {
+	float: right;
+	margin: 0 0 30px 30px;
+	padding: 5px;
+	max-width: 25%;
+}
+
+/* ### -- -- -- -- -- Images -- -- -- -- -- ### */
+
+.image {
+	padding: 5px;
+	text-align: center;
+}
+
+.images {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.images .image {
+	float: left;
+	margin: 10px;
+}
+
+.images .image img {
+	max-width: 200px;
+	max-height: 200px;
+}
+
+/* ### -- -- -- -- -- EOF -- -- -- -- -- ### */
