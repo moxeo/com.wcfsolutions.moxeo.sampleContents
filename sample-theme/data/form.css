@@ -15,20 +15,6 @@ form {
 	padding: 0;
 }
 
-form fieldset {
-	border: none;
-	padding: 0;
-	margin: 0;
-}
-
-form fieldset legend {
-	margin: 0;
-	padding: 0;
-	font-size: 1.25em;
-	border-bottom: 1px solid #8DA4B7;
-	width: 100%;
-}
-
 textarea, input, select {
 	font-size: .95em;
 }
