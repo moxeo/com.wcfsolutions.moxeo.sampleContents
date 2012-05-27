@@ -8,8 +8,61 @@ Copyright 2009-2012 by wcfsolutions.com
 
 */
 
-/* ### -- -- -- -- -- Testing -- -- -- -- -- ### */
+/* ### -- -- -- -- -- Miscellaneous -- -- -- -- -- ### */
 
-@import url('../../style/forms.css');
+form {
+	margin: 0;
+	padding: 0;
+}
+
+form fieldset {
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
+form fieldset legend {
+	margin: 0;
+	padding: 0;
+	font-size: 1.25em;
+	border-bottom: 1px solid #8DA4B7;
+	width: 100%;
+}
+
+textarea, input, select {
+	font-size: .95em;
+}
+
+input[type="submit"], input[type="reset"], input[type="button"], input[type="file"] {
+	font-size: 1em;
+}
+
+textarea, .inputText {
+	border-width: 1px;
+	width: 99.5%;
+}
+
+select {
+	border-width: 1px;
+	padding: 2px;
+}
+
+input[type="text"], input[type="password"] {
+	padding: 3px 0 3px 2px;
+}
+
+.formElement {
+	padding: 5px 0 4px 0;
+}
+
+.formFieldDesc {
+	font-size: .85em;
+}
+
+.formSubmit {
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
 
 /* ### -- -- -- -- -- EOF -- -- -- -- -- ### */

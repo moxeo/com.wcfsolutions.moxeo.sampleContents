@@ -125,4 +125,21 @@ Copyright 2009-2012 by wcfsolutions.com
 	display: inline;
 }
 
+/* ### -- -- -- -- -- Page Navigation -- -- -- -- -- ### */
+
+.pageNavigation  ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.pageNavigation li {
+	display: inline;
+}
+
+/* @todo: remove this workaround */
+.pageNavigation li.children {
+	display: none;
+}
+
 /* ### -- -- -- -- -- EOF -- -- -- -- -- ### */
