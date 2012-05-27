@@ -65,4 +65,22 @@ input[type="text"], input[type="password"] {
 	margin-bottom: 15px;
 }
 
+/* ### -- -- -- -- -- Form Error -- -- -- -- -- ### */
+
+.formError, .formError a {
+	color: #c00;
+}
+
+.formError .inputText, .formError textarea, .formError select {
+	border-color: #c00;
+	background-color: #fee;
+}
+
+.formError .innerError {
+	margin-bottom: 5px;
+	padding: 5px 0;
+	font-size: .85em;
+	font-weight: bold;
+}
+
 /* ### -- -- -- -- -- EOF -- -- -- -- -- ### */

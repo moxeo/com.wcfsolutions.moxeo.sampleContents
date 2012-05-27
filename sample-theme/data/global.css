@@ -24,14 +24,4 @@ a:hover {
 	text-decoration: none;
 }
 
-/* ### -- -- -- -- -- Inner Errors -- -- -- -- -- ### */
-
-.innerError {
-	background-image: url("../../../icon/errorS.png");
-	background-position: 1px center;
-	background-repeat: no-repeat;
-	margin-bottom: 5px;
-	padding: 5px 5px 5px 25px;
-}
-
 /* ### -- -- -- -- -- EOF -- -- -- -- -- ### */
