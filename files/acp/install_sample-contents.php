@@ -42,7 +42,7 @@ $theme = ThemeEditor::import($sourceFile, $packageID);
 if ($theme->themeID) {
 	// language items
 	$languages = array(
-		'de' = array(
+		'de' => array(
 			'contentItem.index' => 'Startseite',
 			'contentItem.index.alias' => 'startseite',
 			'contentItem.index.welcome' => 'Willkommen bei Moxeo Open Source CMS!',
@@ -58,7 +58,7 @@ if ($theme->themeID) {
 			'theme.module.footer' => 'Footer',
 			'userNote' => '{if $this->user->userID}Angemeldet als {$this->user->username}.{else}Sie sind nicht angemeldet.{/if}'
 		),
-		'en' = array(
+		'en' => array(
 			'contentItem.index' => 'Index page',
 			'contentItem.index.alias' => 'index',
 			'contentItem.index.welcome' => 'Welcome to Moxeo Open Source CMS!',
@@ -77,7 +77,7 @@ if ($theme->themeID) {
 	);
 
 	// map language items
-	$languageCode = WCF::getLannguage()->getLanguageCode();
+	$languageCode = WCF::getLanguage()->getLanguageCode();
 	$language = (isset($languages[$languageCode]) ? $languages[$languageCode] : $languages['en']);
 
 	// create theme layout
