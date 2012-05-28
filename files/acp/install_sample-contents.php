@@ -62,7 +62,7 @@ if ($theme->themeID) {
 			'contentItem.index' => 'Index page',
 			'contentItem.index.alias' => 'index',
 			'contentItem.index.welcome' => 'Welcome to Moxeo Open Source CMS!',
-			'contentItem.index.welcome.description' => '<p>Congratulations, you have installed <em>Moxeo Open Source CMS</em> successfully! That was easy, wasn\'t it? You can now add new contents using the <a href="./acp/">Administration Control Panel</a>.</p>',
+			'contentItem.index.welcome.description' => '<p>Congratulations, you have installed <em>Moxeo Open Source CMS</em> successfully! That was easy, wasn\'t it? You can add new contents now using the <a href="./acp/">Administration Control Panel</a>.</p>',
 			'copyright' => '<a href="http://www.moxeo.org/">Software: <strong>Moxeo Open Source CMS</strong>, developed by WCF Solutions</a>',
 			'theme.default' => 'Default',
 			'theme.module.userPanel' => 'User Panel',
