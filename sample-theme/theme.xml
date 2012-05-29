@@ -3,8 +3,8 @@
 	<general>
 		<themename><![CDATA[Sample]]></themename>
 		<description><![CDATA[Based on the WoltLab Community Framework ACP style.]]></description>
-		<version><![CDATA[1.0.0 RC 1]]></version>
-		<date><![CDATA[2012-04-02]]></date>
+		<version><![CDATA[1.0.0 RC 2]]></version>
+		<date><![CDATA[2012-05-29]]></date>
 		<copyright><![CDATA[2009-2012 WCF Solutions <http://www.wcfsolutions.com/index.php>]]></copyright>
 		<license><![CDATA[GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>]]></license>
 	</general>
