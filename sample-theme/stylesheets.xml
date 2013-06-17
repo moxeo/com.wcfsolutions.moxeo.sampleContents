@@ -35,7 +35,8 @@
 @sidebarMenuLinkHoverBackgroundColor: #cfcfcf;
 @sidebarMenuLinkActiveColor: #fff;
 @sidebarMenuLinkActiveBackgroundColor: #3f81b2;]]></stylesheet>
-	<stylesheet title="Page"><![CDATA[body, textarea {
+	<stylesheet title="Page"><![CDATA[/* main declarations */
+body, textarea {
 	font-family: @font;
 }
 
@@ -63,6 +64,35 @@ a {
 	margin: @gapMedium auto;
 	border: 1px solid @contentBorderColor;
 	width: @pageWidth;
+}
+
+/* basic declarations */
+strong {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+
+sub {
+	vertical-align: sub;
+}
+
+sup {
+	vertical-align: super;
+}
+
+ol, ul {
+	padding-left: 30px;
+}
+
+ol {
+	list-style-type: decimal;
+}
+
+ul {
+	list-style-type: disc;
 }]]></stylesheet>
 	<stylesheet title="Layout"><![CDATA[#layout-1, #layout-2, #layout-3, #layout-4 {
 	display: table-row;
@@ -114,7 +144,7 @@ a {
 
 				&:hover {
 					background-color: #cfcfcf;
-					
+
 				}
 			}
 
@@ -127,18 +157,18 @@ a {
 }]]></stylesheet>
 	<stylesheet title="Footer"><![CDATA[#footer {
 	font-size: .85em;
-	
+
 	.inner {
 		margin: @pageMargin;
 	}
-		
+
 	div {
 		text-align: right;
 	}
-	
+
 	a {
 		color: #3f81b2;
-		
+
 		&:hover {
 			color: #195594;
 			text-decoration: underline;
@@ -177,7 +207,7 @@ a {
 	#main .module, #main .section {
 		margin-bottom: @gapLarge;
 		display: block;
-		
+
 		&:after {
 			clear: both;
 			display: block;
@@ -190,7 +220,7 @@ a {
 	h1, h2, h3 {
 		margin: @gapSmall 0;
 		color: @headlineColor;
-		
+
 		a, a:hover {
 			text-decoration: none;
 		}
@@ -219,7 +249,7 @@ a {
 		padding: @gapMedium;
 		font-size: 0.95em;
 		list-style: none;
-		
+
 		li {
 			margin-right: 1px;
 			display: inline;
@@ -232,13 +262,13 @@ a {
 			list-style: none;
 		}
 
-		li {		
+		li {
 			a {
 				color: @sidebarMenuLinkColor;
 				padding: @gapSmall;
 				display: block;
 				text-decoration: none;
-				
+
 				&:hover {
 					background-color: @sidebarMenuLinkHoverBackgroundColor;
 				}
@@ -340,7 +370,7 @@ a {
 	.text {
 		line-height: 1.5;
 	}
-	
+
 	/* images */
 	.thumbnail, .image {
 		text-align: center;
@@ -383,7 +413,7 @@ a {
 			}
 		}
 	}
-	
+
 	/* files */
 	.files {
 		list-style: none;
