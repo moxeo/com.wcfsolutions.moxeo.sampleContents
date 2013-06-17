@@ -35,8 +35,7 @@
 @sidebarMenuLinkHoverBackgroundColor: #cfcfcf;
 @sidebarMenuLinkActiveColor: #fff;
 @sidebarMenuLinkActiveBackgroundColor: #3f81b2;]]></stylesheet>
-	<stylesheet title="Page"><![CDATA[/* main declarations */
-body, textarea {
+	<stylesheet title="Page"><![CDATA[body, textarea {
 	font-family: @font;
 }
 
@@ -64,35 +63,6 @@ a {
 	margin: @gapMedium auto;
 	border: 1px solid @contentBorderColor;
 	width: @pageWidth;
-}
-
-/* basic declarations */
-strong {
-	font-weight: bold;
-}
-
-em {
-	font-style: italic;
-}
-
-sub {
-	vertical-align: sub;
-}
-
-sup {
-	vertical-align: super;
-}
-
-ol, ul {
-	padding-left: 30px;
-}
-
-ol {
-	list-style-type: decimal;
-}
-
-ul {
-	list-style-type: disc;
 }]]></stylesheet>
 	<stylesheet title="Layout"><![CDATA[#layout-1, #layout-2, #layout-3, #layout-4 {
 	display: table-row;
@@ -111,9 +81,27 @@ ul {
 		margin: @pageMargin;
 	}
 
+	#userPanel {
+		font-size: .85em;
+	}
+
 	#userNote {
-		font-size: 0.85em;
+		display: table-cell;
 		color: @dimmedColor;
+		vertical-align: top;
+	}
+
+	#userMenu {
+		display: table-cell;
+
+		li:before {
+			content: "|";
+			padding: 0 2px;
+		}
+
+		li {
+			float: left;
+		}
 	}
 
 	#pageTitle {
@@ -173,6 +161,10 @@ ul {
 			color: #195594;
 			text-decoration: underline;
 		}
+	}
+
+	strong {
+		font-weight: bold;
 	}
 }]]></stylesheet>
 	<stylesheet title="Content"><![CDATA[#content {
@@ -369,6 +361,34 @@ ul {
 
 	.text {
 		line-height: 1.5;
+
+		strong {
+			font-weight: bold;
+		}
+
+		em {
+			font-style: italic;
+		}
+
+		sub {
+			vertical-align: sub;
+		}
+
+		sup {
+			vertical-align: super;
+		}
+
+		ol, ul {
+			padding-left: 30px;
+		}
+
+		ol {
+			list-style-type: decimal;
+		}
+
+		ul {
+			list-style-type: disc;
+		}
 	}
 
 	/* images */

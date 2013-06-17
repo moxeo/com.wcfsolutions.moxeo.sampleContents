@@ -72,7 +72,19 @@ if ($theme->themeID) {
 			'theme.module.breadCrumbs' => 'Brotkrümel-Navigation',
 			'theme.module.article' => 'Artikel',
 			'theme.module.footer' => 'Footer',
-			'userNote' => '{if $this->user->userID}Angemeldet als {$this->user->username}. | <a href="{if \'URL_PREFIX\'|defined}{@URL_PREFIX}{else}index.php/{/if}abmelden/?t={@SECURITY_TOKEN}{@SID_ARG_2ND}">Abmelden</a> | <a href="{if \'URL_PREFIX\'|defined}{@URL_PREFIX}{else}index.php/{/if}account/{@SID_ARG_1ST}">Accountverwaltung</a>{if $this->user->getPermission(\'admin.general.canUseAcp\')} | <a href="acp/index.php">Administration</a>{/if}{else}Sie sind nicht angemeldet. | <a href="{if \'URL_PREFIX\'|defined}{@URL_PREFIX}{else}index.php/{/if}anmelden/{@SID_ARG_1ST}">Anmelden</a> | <a href="{if \'URL_PREFIX\'|defined}{@URL_PREFIX}{else}index.php/{/if}registrieren/{@SID_ARG_1ST}">Registrieren</a>{/if}'
+			'userNote' => '<p id="userNote">{if $this->user->userID}Angemeldet als {$this->user->username}.{else}Sie sind nicht angemeldet.{/if}</p>
+<div id="userMenu">
+	<ul>
+		{if $this->user->userID}
+			<li><a href="{if \'URL_PREFIX\'|defined}{@URL_PREFIX}{else}index.php/{/if}logout/?t={@SECURITY_TOKEN}{@SID_ARG_2ND}">Abmelden</a></li>
+			<li><a href="{if \'URL_PREFIX\'|defined}{@URL_PREFIX}{else}index.php/{/if}account/{@SID_ARG_1ST}">Accountverwaltung</a></li>
+			{if $this->user->getPermission(\'admin.general.canUseAcp\')}<li><a href="acp/index.php">Administration</a></li>{/if}
+		{else}
+			<li><a href="{if \'URL_PREFIX\'|defined}{@URL_PREFIX}{else}index.php/{/if}login/{@SID_ARG_1ST}">Anmelden</a></li>
+			<li><a href="{if \'URL_PREFIX\'|defined}{@URL_PREFIX}{else}index.php/{/if}register/{@SID_ARG_1ST}">Registrieren</a></li>
+		{/if}
+	</ul>
+</div>'
 		),
 		'en' => array(
 			'contentItem.index' => 'Index page',
@@ -104,7 +116,19 @@ if ($theme->themeID) {
 			'theme.module.breadCrumbs' => 'Bread Crumbs',
 			'theme.module.article' => 'Article',
 			'theme.module.footer' => 'Footer',
-			'userNote' => '{if $this->user->userID}Welcome {$this->user->username}. | <a href="{if \'URL_PREFIX\'|defined}{@URL_PREFIX}{else}index.php/{/if}logout/?t={@SECURITY_TOKEN}{@SID_ARG_2ND}">Logout</a> | <a href="{if \'URL_PREFIX\'|defined}{@URL_PREFIX}{else}index.php/{/if}account/{@SID_ARG_1ST}">Account Management</a>{if $this->user->getPermission(\'admin.general.canUseAcp\')} | <a href="acp/index.php">Administration</a>{/if}{else}You are not logged in. | <a href="{if \'URL_PREFIX\'|defined}{@URL_PREFIX}{else}index.php/{/if}login/{@SID_ARG_1ST}">Login</a> | <a href="{if \'URL_PREFIX\'|defined}{@URL_PREFIX}{else}index.php/{/if}register/{@SID_ARG_1ST}">Register</a>{/if}'
+			'userNote' => '<p id="userNote">{if $this->user->userID}Welcome {$this->user->username}.{else}You are not logged in.{/if}</p>
+<div id="userMenu">
+	<ul>
+		{if $this->user->userID}
+			<li><a href="{if \'URL_PREFIX\'|defined}{@URL_PREFIX}{else}index.php/{/if}logout/?t={@SECURITY_TOKEN}{@SID_ARG_2ND}">Logout</a></li>
+			<li><a href="{if \'URL_PREFIX\'|defined}{@URL_PREFIX}{else}index.php/{/if}account/{@SID_ARG_1ST}">Account Management</a></li>
+			{if $this->user->getPermission(\'admin.general.canUseAcp\')}<li><a href="acp/index.php">Administration</a></li>{/if}
+		{else}
+			<li><a href="{if \'URL_PREFIX\'|defined}{@URL_PREFIX}{else}index.php/{/if}login/{@SID_ARG_1ST}">Login</a></li>
+			<li><a href="{if \'URL_PREFIX\'|defined}{@URL_PREFIX}{else}index.php/{/if}register/{@SID_ARG_1ST}">Register</a></li>
+		{/if}
+	</ul>
+</div>'
 		)
 	);
 
