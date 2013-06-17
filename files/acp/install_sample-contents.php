@@ -176,12 +176,18 @@ if ($theme->themeID) {
 	$themeLayout->addThemeModule($articleThemeModule->themeModuleID, 'main');
 	$themeLayout->addThemeModule($footerThemeModule->themeModuleID, 'footer');
 
+	// create root
+	$sql = "INSERT INTO	moxeo".WCF_N."_".$instanceNo."_content_item
+				(languageID, parentID, title, contentItemType)
+		VALUES		(".WCF::getLanguage()->getLanguageID().", 0, 'Moxeo Open Source CMS', -1)";
+	WCF::getDB()->sendQuery($sql);
+	$rootID = WCF::getDB()->getInsertID("moxeo".WCF_N."_".$instanceNo."_content_item", 'contentItemID');
+
 	$contentItems = array();
 
 	// index page
 	$contentItems[] = array(
-		'languageID' => WCF::getLanguage()->getLanguageID(),
-		'parentID' => 0,
+		'parentID' => $rootID,
 		'title' => $language['contentItem.index'],
 		'contentItemAlias' => $language['contentItem.index.alias'],
 		'showOrder' => 1,
@@ -211,8 +217,7 @@ if ($theme->themeID) {
 
 	// login page
 	$contentItems[] = array(
-		'languageID' => WCF::getLanguage()->getLanguageID(),
-		'parentID' => 0,
+		'parentID' => $rootID,
 		'title' => $language['contentItem.login'],
 		'contentItemAlias' => $language['contentItem.login.alias'],
 		'robots' => 'noindex/nofollow',
@@ -239,8 +244,7 @@ if ($theme->themeID) {
 
 	// register page
 	$contentItems[] = array(
-		'languageID' => WCF::getLanguage()->getLanguageID(),
-		'parentID' => 0,
+		'parentID' => $rootID,
 		'title' => $language['contentItem.register'],
 		'contentItemAlias' => $language['contentItem.register.alias'],
 		'robots' => 'noindex/nofollow',
@@ -267,8 +271,7 @@ if ($theme->themeID) {
 
 	// account management page
 	$contentItems[] = array(
-		'languageID' => WCF::getLanguage()->getLanguageID(),
-		'parentID' => 0,
+		'parentID' => $rootID,
 		'title' => $language['contentItem.accountManagement'],
 		'contentItemAlias' => $language['contentItem.accountManagement.alias'],
 		'robots' => 'noindex/nofollow',
@@ -295,8 +298,7 @@ if ($theme->themeID) {
 
 	// logout page
 	$contentItems[] = array(
-		'languageID' => WCF::getLanguage()->getLanguageID(),
-		'parentID' => 0,
+		'parentID' => $rootID,
 		'title' => $language['contentItem.logout'],
 		'contentItemAlias' => $language['contentItem.logout.alias'],
 		'robots' => 'noindex/nofollow',
@@ -324,8 +326,7 @@ if ($theme->themeID) {
 
 	// error 403 page
 	$contentItems[] = array(
-		'languageID' => WCF::getLanguage()->getLanguageID(),
-		'parentID' => 0,
+		'parentID' => $rootID,
 		'title' => $language['contentItem.error403'],
 		'contentItemAlias' => 'error403',
 		'contentItemType' => 2,
@@ -356,8 +357,7 @@ if ($theme->themeID) {
 
 	// error 404 page
 	$contentItems[] = array(
-		'languageID' => WCF::getLanguage()->getLanguageID(),
-		'parentID' => 0,
+		'parentID' => $rootID,
 		'title' => $language['contentItem.error404'],
 		'contentItemAlias' => 'error404',
 		'contentItemType' => 3,
@@ -406,7 +406,7 @@ if ($theme->themeID) {
 
 		$sql = "INSERT INTO	moxeo".WCF_N."_".$instanceNo."_content_item
 					(languageID, parentID, title, contentItemAlias, description, pageTitle, metaDescription, metaKeywords, contentItemType, externalURL, publishingStartTime, publishingEndTime, themeLayoutID, cssClasses, robots, showOrder, enabled, invisible, addSecurityToken)
-			VALUES		(".$contentItem['languageID'].", ".$contentItem['parentID'].", '".escapeString($contentItem['title'])."', '".escapeString($contentItem['contentItemAlias'])."', '".escapeString($contentItem['description'])."', '".escapeString($contentItem['pageTitle'])."', '".escapeString($contentItem['metaDescription'])."', '".escapeString($contentItem['metaKeywords'])."', ".$contentItem['contentItemType'].", '".escapeString($contentItem['externalURL'])."', ".$contentItem['publishingStartTime'].", ".$contentItem['publishingEndTime'].", ".$contentItem['themeLayoutID'].", '".escapeString($contentItem['cssClasses'])."', '".escapeString($contentItem['robots'])."', ".$contentItem['showOrder'].", ".$contentItem['enabled'].", ".$contentItem['invisible'].", ".$contentItem['addSecurityToken'].")";
+			VALUES		(0, ".$contentItem['parentID'].", '".escapeString($contentItem['title'])."', '".escapeString($contentItem['contentItemAlias'])."', '".escapeString($contentItem['description'])."', '".escapeString($contentItem['pageTitle'])."', '".escapeString($contentItem['metaDescription'])."', '".escapeString($contentItem['metaKeywords'])."', ".$contentItem['contentItemType'].", '".escapeString($contentItem['externalURL'])."', ".$contentItem['publishingStartTime'].", ".$contentItem['publishingEndTime'].", ".$contentItem['themeLayoutID'].", '".escapeString($contentItem['cssClasses'])."', '".escapeString($contentItem['robots'])."', ".$contentItem['showOrder'].", ".$contentItem['enabled'].", ".$contentItem['invisible'].", ".$contentItem['addSecurityToken'].")";
 		WCF::getDB()->sendQuery($sql);
 		$contentItemID = WCF::getDB()->getInsertID("moxeo".WCF_N."_".$instanceNo."_content_item", 'contentItemID');
 
