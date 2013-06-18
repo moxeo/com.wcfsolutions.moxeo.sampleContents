@@ -151,7 +151,7 @@ a {
 	}
 
 	div {
-		text-align: right;
+		text-align: center;
 	}
 
 	a {
@@ -190,7 +190,7 @@ a {
 		padding-left: @pageMargin;
 	}
 
-	#left .inner > div, #right .inner > div {
+	#left .inner > .module, #right .inner > .module {
 		margin-bottom: @gapLarge;
 		padding: @gapMedium;
 		background-color: @sidebarBackgroundColor;

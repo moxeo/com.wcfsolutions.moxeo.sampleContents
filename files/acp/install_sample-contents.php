@@ -150,8 +150,8 @@ if ($theme->themeID) {
 		'dynamicCode' => compileTPL('<div id="userNote">'.$language['userNote'].'</div>')
 	), $packageID);
 	$headerThemeModule = ThemeModuleEditor::create($theme->themeID, $language['theme.module.pageTitle'], 'pageTitle', '', 'html', array(
-		'code' => '<a href="./">{PAGE_TITLE}</a>',
-		'dynamicCode' => compileTPL('<a href="./">{PAGE_TITLE}</a>')
+		'code' => '<a href="./">{$contentItem->getRoot()->title}</a>',
+		'dynamicCode' => compileTPL('<a href="./">{$contentItem->getRoot()->title}</a>')
 	), $packageID);
 	$mainNavigationThemeModule = ThemeModuleEditor::create($theme->themeID, $language['theme.module.mainMenu'], 'mainMenu', '', 'navigation', array('levelOffset' => 0, 'levelLimit' => 1), $packageID);
 	$subNavigationThemeModule = ThemeModuleEditor::create($theme->themeID, $language['theme.module.subMenu'], 'subMenu', '', 'navigation', array('levelOffset' => 1, 'levelLimit' => 5), $packageID);
@@ -162,8 +162,8 @@ if ($theme->themeID) {
 	$breadCrumbThemeModule = ThemeModuleEditor::create($theme->themeID, $language['theme.module.breadCrumbs'], '', '', 'breadCrumb', array(), $packageID);
 	$articleThemeModule = ThemeModuleEditor::create($theme->themeID, $language['theme.module.article'], '', '', 'article', array(), $packageID);
 	$footerThemeModule = ThemeModuleEditor::create($theme->themeID, $language['theme.module.footer'], '', '', 'html', array(
-		'code' => $language['copyright'].' | {@TIME_NOW|fulldate}',
-		'dynamicCode' => compileTPL($language['copyright'].' | {@TIME_NOW|fulldate}')
+		'code' => $language['copyright'],
+		'dynamicCode' => ''
 	), $packageID);
 
 	// add modules to layout
