@@ -454,6 +454,24 @@ a {
 			color: @dimmedColor;
 		}
 	}
+
+	/* page navigation */
+	.pageNavigation {
+		padding: 10px 0;
+
+		.skip {
+			display: none;
+		}
+
+		li {
+			display: inline;
+
+			/* @todo: remove this workaround */
+			&.children {
+				display: none;
+			}
+		}
+	}
 }]]></stylesheet>
 	<stylesheet title="Form"><![CDATA[form {
 	fieldset {
