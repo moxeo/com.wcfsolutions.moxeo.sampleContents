@@ -76,12 +76,12 @@ if ($theme->themeID) {
 <div id="userMenu">
 	<ul>
 		{if $this->user->userID}
-			<li><a href="{if \'URL_PREFIX\'|defined}{@URL_PREFIX}{else}index.php/{/if}logout/?t={@SECURITY_TOKEN}{@SID_ARG_2ND}">Abmelden</a></li>
+			<li><a href="{if \'URL_PREFIX\'|defined}{@URL_PREFIX}{else}index.php/{/if}abmelden/?t={@SECURITY_TOKEN}{@SID_ARG_2ND}">Abmelden</a></li>
 			<li><a href="{if \'URL_PREFIX\'|defined}{@URL_PREFIX}{else}index.php/{/if}account/{@SID_ARG_1ST}">Accountverwaltung</a></li>
 			{if $this->user->getPermission(\'admin.general.canUseAcp\')}<li><a href="acp/index.php">Administration</a></li>{/if}
 		{else}
-			<li><a href="{if \'URL_PREFIX\'|defined}{@URL_PREFIX}{else}index.php/{/if}login/{@SID_ARG_1ST}">Anmelden</a></li>
-			<li><a href="{if \'URL_PREFIX\'|defined}{@URL_PREFIX}{else}index.php/{/if}register/{@SID_ARG_1ST}">Registrieren</a></li>
+			<li><a href="{if \'URL_PREFIX\'|defined}{@URL_PREFIX}{else}index.php/{/if}anmelden/{@SID_ARG_1ST}">Anmelden</a></li>
+			<li><a href="{if \'URL_PREFIX\'|defined}{@URL_PREFIX}{else}index.php/{/if}registrieren/{@SID_ARG_1ST}">Registrieren</a></li>
 		{/if}
 	</ul>
 </div>'
