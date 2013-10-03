@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<stylesheets xmlns="http://www.wcfsolutions.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wcfsolutions.com http://www.wcfsolutions.com/XSD/theme-stylesheet.xsd">
-	<stylesheet title="Variables"><![CDATA[/* page variables */
+<data xmlns="http://www.wcfsolutions.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wcfsolutions.com http://www.wcfsolutions.com/XSD/theme-data.xsd">
+	<stylesheets>
+		<stylesheet id="a4e114be2d6f24c1a5cc9b616f8a578543e3b02f">
+			<title><![CDATA[Variables]]></title>
+			<lesscode><![CDATA[/* page variables */
 @font: 'Trebuchet MS', Arial, sans-serif;
 @pageBackgroundColor: #fdfeff;
 @pageWidth: 960px;
@@ -34,8 +37,11 @@
 @sidebarMenuLinkColor: #3f81b2;
 @sidebarMenuLinkHoverBackgroundColor: #cfcfcf;
 @sidebarMenuLinkActiveColor: #fff;
-@sidebarMenuLinkActiveBackgroundColor: #3f81b2;]]></stylesheet>
-	<stylesheet title="Page"><![CDATA[body, textarea {
+@sidebarMenuLinkActiveBackgroundColor: #3f81b2;]]></lesscode>
+		</stylesheet>
+		<stylesheet id="afe7d48d4153c417b42f902e283833d3a9597ddf">
+			<title><![CDATA[Page]]></title>
+			<lesscode><![CDATA[body, textarea {
 	font-family: @font;
 }
 
@@ -63,8 +69,11 @@ a {
 	margin: @gapMedium auto;
 	border: 1px solid @contentBorderColor;
 	width: @pageWidth;
-}]]></stylesheet>
-	<stylesheet title="Layout"><![CDATA[#layout-1, #layout-2, #layout-3, #layout-4 {
+}]]></lesscode>
+		</stylesheet>
+		<stylesheet id="a7820d1b7882048a12ab559bca875904e31cfde0">
+			<title><![CDATA[Layout]]></title>
+			<lesscode><![CDATA[#layout-1, #layout-2, #layout-3, #layout-4 {
 	display: table-row;
 }
 
@@ -75,8 +84,11 @@ a {
 
 #layout-2 #right, #layout-3 #left, #layout-4 #left, #layout-4 #right {
 	width: @sidebarWidth;
-}]]></stylesheet>
-	<stylesheet title="Header"><![CDATA[#header {
+}]]></lesscode>
+		</stylesheet>
+		<stylesheet id="a64f5eafc95bf54c5f2a821f9e515a58c77becf0">
+			<title><![CDATA[Header]]></title>
+			<lesscode><![CDATA[#header {
 	.inner {
 		margin: @pageMargin;
 	}
@@ -142,8 +154,11 @@ a {
 			}
 		}
 	}
-}]]></stylesheet>
-	<stylesheet title="Footer"><![CDATA[#footer {
+}]]></lesscode>
+		</stylesheet>
+		<stylesheet id="86da216c4452c10a9add9b393a4b1ca78952fd11">
+			<title><![CDATA[Footer]]></title>
+			<lesscode><![CDATA[#footer {
 	font-size: .85em;
 
 	.inner {
@@ -166,8 +181,11 @@ a {
 	strong {
 		font-weight: bold;
 	}
-}]]></stylesheet>
-	<stylesheet title="Content"><![CDATA[#content {
+}]]></lesscode>
+		</stylesheet>
+		<stylesheet id="1805d0fb22ec8119f3886430a78d5a564e247ae5">
+			<title><![CDATA[Content]]></title>
+			<lesscode><![CDATA[#content {
 	display: table;
 	margin: @pageMargin;
 	width: (@pageWidth - 2 * @pageMargin);
@@ -454,26 +472,11 @@ a {
 			color: @dimmedColor;
 		}
 	}
-
-	/* page navigation */
-	.pageNavigation {
-		padding: 10px 0;
-
-		.skip {
-			display: none;
-		}
-
-		li {
-			display: inline;
-
-			/* @todo: remove this workaround */
-			&.children {
-				display: none;
-			}
-		}
-	}
-}]]></stylesheet>
-	<stylesheet title="Form"><![CDATA[form {
+}]]></lesscode>
+		</stylesheet>
+		<stylesheet id="016203051b1392d99400ebd8000cafdf536d9b1c">
+			<title><![CDATA[Form]]></title>
+			<lesscode><![CDATA[form {
 	fieldset {
 		margin: @gapMedium 0;
 
@@ -556,5 +559,7 @@ dl.formElement {
 .formSubmit {
 	margin: @gapMedium;
 	text-align: center;
-}]]></stylesheet>
-</stylesheets>
+}]]></lesscode>
+		</stylesheet>
+	</stylesheets>
+</data>

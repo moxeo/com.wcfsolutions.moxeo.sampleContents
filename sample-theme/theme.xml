@@ -3,16 +3,14 @@
 	<general>
 		<themename><![CDATA[Sample]]></themename>
 		<description><![CDATA[A sample theme for Moxeo Open Source CMS.]]></description>
-		<version><![CDATA[1.1.0 Beta 1]]></version>
-		<date><![CDATA[2013-05-19]]></date>
+		<version><![CDATA[1.1.0 Beta 2]]></version>
+		<date><![CDATA[2013-10-03]]></date>
 		<copyright><![CDATA[2009-2013 WCF Solutions <http://www.wcfsolutions.com/>]]></copyright>
 		<license><![CDATA[GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>]]></license>
 	</general>
 	<author>
-		<authorname><![CDATA[WCF Solutions]]></authorname>
-		<authorurl><![CDATA[http://www.wcfsolutions.com]]></authorurl>
 	</author>
-	<files>
-		<stylesheets>stylesheets.xml</stylesheets>
-	</files>
+	<install>
+		<data>data.xml</data>
+	</install>
 </theme>
