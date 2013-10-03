@@ -5,8 +5,8 @@
 		<packagename language="de">Beispielinhalte</packagename>
 		<packagedescription>Installs sample contents including a theme. Ideal if you are using Moxeo Open Source CMS for the first time.</packagedescription>
 		<packagedescription language="de">Installiert Beispielinhalte inklusive eines Themes. Ideal, wenn Sie Moxeo Open Source CMS zum ersten Mal verwenden.</packagedescription>
-		<version>1.1.0 Beta 1</version>
-		<date>2013-06-18</date>
+		<version>1.1.0 Beta 2</version>
+		<date>2013-10-03</date>
 		<plugin>com.wcfsolutions.moxeo</plugin>
 	</packageinformation>
 
@@ -17,7 +17,7 @@
 
 	<requiredpackages>
 		<requiredpackage minversion="1.1.9">com.woltlab.wcf</requiredpackage>
-		<requiredpackage minversion="1.1.0 Beta 1">com.wcfsolutions.moxeo</requiredpackage>
+		<requiredpackage minversion="1.1.0 Beta 2">com.wcfsolutions.moxeo</requiredpackage>
 	</requiredpackages>
 
 	<instructions type="install">
@@ -26,7 +26,7 @@
 		<script>acp/install_sample-contents.php</script>
 	</instructions>
 
-	<instructions type="update" fromversion="1.0.0 RC 2">
+	<instructions type="update" fromversion="1.1.0 Beta 1">
 		<!-- files -->
 		<files>files.tar</files>
 		<script>acp/install_sample-contents.php</script>
