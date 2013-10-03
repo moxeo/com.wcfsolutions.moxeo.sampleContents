@@ -9,6 +9,8 @@
 		<license><![CDATA[GNU Lesser General Public License <http://opensource.org/licenses/lgpl-license.php>]]></license>
 	</general>
 	<author>
+		<authorname>WCF Solutions</authorname>
+		<authorurl>http://www.wcfsolutions.com</authorurl>
 	</author>
 	<install>
 		<data>data.xml</data>
